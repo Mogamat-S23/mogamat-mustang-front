@@ -42,7 +42,7 @@
             <td>{{ product.image2}}</td>
             <td>{{ product.image3}}</td>
             <td>{{ product.image4}}</td> -->
-            <td><img :src="product.mainImage" alt="" style="width:213px; height:1600px;" /></td>
+            <td><img :src="product.mainImage" alt="" style="width:213px; height:160px;" /></td>
             <td><img :src="product.image2" alt=""/></td>
             <td><img :src="product.image3" alt=""/></td>
             <td><img :src="product.image4" alt=""/></td>
@@ -85,17 +85,14 @@
         <div v-else>No data</div>
     </table>
   </div>
- 
+  <createModal />
 </template>
 
-
-
- 
-
-
 <script>
-
+import createModal from "@/components/createModel.vue";
 export default {
+
+    components:{createModal},
  
   mounted() {
     this.$store.dispatch("products");
