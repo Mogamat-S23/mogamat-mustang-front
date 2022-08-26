@@ -26,7 +26,7 @@
                 <input
                   class="form-control"
                   type="text"
-                  v-model="prodName"
+                  v-model="productName"
                   name="addtitle"
                   id="addtitle"
                   placeholder="Enter title Name:"
@@ -88,9 +88,9 @@
                 <input
                   class="form-control"
                   type="text"
-                  name="adddescription"
-                  id="addescription"
-                  v-model="description"
+                  name="carDescription"
+                  id="CarDescription"
+                  v-model="carDescription"
                   placeholder="description"
                 />
               </div>
@@ -117,7 +117,7 @@
                   name="addModel"
                   id="addModel"
                   v-model="model"
-                  placeholder="Add Model"
+                  placeholder="car release date"
                 />
               </div>
               <!-- engine type -->
@@ -128,8 +128,20 @@
                   type="text"
                   name="engineType"
                   id="engineType"
-                  v-model="engineType"
-                  placeholder="engineType"
+                  v-model="engine"
+                  placeholder="petrol or diesel"
+                />
+              </div>
+              <!-- body type -->
+                <div class="mb-3">
+                <label for="adddescription" class="form-label">Body Type</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="bodyType"
+                  id="bodyType"
+                  v-model="bodyType"
+                  placeholder="body type"
                 />
               </div>
               <!-- seat quantity -->
@@ -141,7 +153,7 @@
                   name="addSeatQauntity"
                   id="addSeatQauntity"
                   v-model="seatQuantity"
-                  placeholder="Add Model"
+                  placeholder="number of seats"
                 />
               </div>
 
@@ -166,7 +178,7 @@
                   name="addgear"
                   id="addgear"
                   v-model="gear"
-                  placeholder="gear"
+                  placeholder="manual or automatic"
                 />
               </div>
             
@@ -199,14 +211,16 @@
 export default {
   data() {
     return {
-      mainImage: "https://i.postimg.cc/cJrnTLRQ/logo.png",
-      image2:"",
-      image3:"",
-      image4:"",
-      description:"",
+      productName:"",  
+      mainImage: "https://i.postimg.cc/LsvJSbxH/the-logo.jpg",
+      image2:"https://i.postimg.cc/LsvJSbxH/the-logo.jpg",
+      image3:"https://i.postimg.cc/LsvJSbxH/the-logo.jpg",
+      image4:"https://i.postimg.cc/LsvJSbxH/the-logo.jpg",
+      carDescription:"",
       price:"",
       model:"",
-      engineType:"",
+      engine:"",
+      bodyType:"",
       seatQuantity:"",
       handling:"",
       gear:""
@@ -215,14 +229,16 @@ export default {
   methods: {
     add() {
       return this.$store.dispatch("addProduct", {
+        productName:this.productName, 
         mainImage:this.mainImage,
         image2:this.image2,
         image3:this.image3,
         image4:this.image4,
-        description:this.description,
+        carDescription:this.carDescription,
         price:this.price,
         model:this.model,
-        engineType:this.engineType,
+        engine:this.engine,
+        bodyType:this.bodyType,
         seatQuantity:this.seatQuantity,
         handling:this.handling,
         gear:this.gear

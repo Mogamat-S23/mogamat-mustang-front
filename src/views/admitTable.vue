@@ -47,11 +47,11 @@
             <td><img :src="product.image3" alt=""/></td>
             <td><img :src="product.image4" alt=""/></td>
             
-            <td>{{ product.carDescription }}</td>
+            <td>{{ product.carDescription}}</td>
             <!-- <td><img :src="product.image2" alt="" /></td> -->
             <td>R{{ product.price }}.00</td>
             <td>{{ product.model}}</td>
-            <td>{{ product.engin}}</td>
+            <td>{{ product.engine}}</td>
             <td>{{ product.bodyType}}</td>
             <td>{{ product.seatQuantity}}</td>
             <td>{{ product.handling}}</td>
@@ -63,23 +63,23 @@
                      :data-bs-target="'#update' + product.id">
                   </a>Edit</td> -->
   
-          <!-- <td>
+          <td>
             <th scoped="col"> <button id="btnSubmit1" class="btn" data-bs-toggle="modal"  :data-bs-target="'#update'+ product.product_id">
              Edit</button></th>
-             </td>
+             </td> 
          
           <th >
              <td scoped='col'> 
             <button type="btn" class="btn" id="btnSubmit1"
-          @click="$store.dispatch('deleteProduct', product. product_id)"
+          @click="$store.dispatch('deleteProduct', product.product_id)"
                     >Delete
                   </button>
              </td>
              </th>
-              -->
+              
 
            
-           <!-- <updateModal :product="product"/>   -->
+           <updateModal :product="product"/>  
           </tr> 
       </tbody>
         <div v-else>No data</div>
@@ -90,9 +90,10 @@
 
 <script>
 import createModal from "@/components/createModel.vue";
+import updateModal from "@/components/updateModal.vue"
 export default {
 
-    components:{createModal},
+    components:{createModal, updateModal},
  
   mounted() {
     this.$store.dispatch("products");
