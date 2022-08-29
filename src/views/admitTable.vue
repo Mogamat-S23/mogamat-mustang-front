@@ -66,26 +66,18 @@
           <td>
             <th scoped="col"> <button id="btnSubmit1" class="btn" data-bs-toggle="modal"  :data-bs-target="'#update'+ product.product_id">
              Edit</button></th>
-             </td> 
-         
-          <th >
-             <td scoped='col'> 
-            <button type="btn" class="btn" id="btnSubmit1"
-          @click="$store.dispatch('deleteProduct', product.product_id)"
+             <button type="btn" class="btn" id="btnSubmit1"
+          @click="this.$store.dispatch('deleteProduct', product.product_id)"
                     >Delete
                   </button>
-             </td>
-             </th>
-              
-
-           
+             </td> 
            <updateModal :product="product"/>  
+  <createModal :product="product"/>
           </tr> 
       </tbody>
         <div v-else>No data</div>
     </table>
   </div>
-  <createModal />
 </template>
 
 <script>
@@ -96,7 +88,7 @@ export default {
     components:{createModal, updateModal},
  
   mounted() {
-    this.$store.dispatch("products");
+    this.$store.dispatch("fetchProducts");
   },
   computed: {
     products() {

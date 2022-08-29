@@ -1,4 +1,7 @@
 <template>
+<header>
+
+</header>
   <div id="singleprod" class="container mt-2 d-flex justify-content-center align-items-center">
     <div class="row" v-if="mustang">
       <div class="col-md-12">
@@ -50,3 +53,10 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+  header{
+    background-color: black;
+    height: 10vh;
+  }
+</style>

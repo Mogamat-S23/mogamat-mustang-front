@@ -18,7 +18,7 @@ export default createStore({
       await fetch('https://mogamatmustang.herokuapp.com/products')
         .then(products => products.json())
         .then(productsJson => context.state.products = productsJson.mustangs)
-        .then(console.log(context.state.products))
+        // .then(console.log(context.state.products))
     },
     getProduct: async (context, id) => {
       await fetch(`https://mogamatmustang.herokuapp.com/products/${id}`)
@@ -78,7 +78,7 @@ export default createStore({
     // updates 
     updateProduct: async (context, product) => {
       // fetch("http://localhost:3000/products/" + product.id, {
-      fetch("https://mogamatmustang.herokuapp.com/products/" + product.id, {
+      fetch(`https://mogamatmustang.herokuapp.com/products/ ${product.product_id}`, {
           method: "PUT",
           body: JSON.stringify(product),
           headers: {
@@ -89,9 +89,28 @@ export default createStore({
         .then((res) => res.json())
         .then((data) => {
           alert(data.msg);
-          context.dispatch("products");
+          context.dispatch("fetchProducts");
         });
     },
+    
+    // Deletes Item from db
+    deleteProduct: async (context, id) => {
+      // fetch("http://localhost:3000/products/" + id, {
+      fetch("https://mogamatmustang.herokuapp.com/products/" + id, {
+          method: "DELETE",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          },
+        })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data)
+          context.dispatch("fetchProducts")
+        });
+
+    },
+
   },
   modules: {}
 })

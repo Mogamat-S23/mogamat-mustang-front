@@ -9,12 +9,17 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav  ms-auto">
                   <li class="nav-item">
-                    <router-link to="/">Home
+                    <router-link to="/">Home |
                        </router-link>
                     
                   </li>
                   <li class="nav-item">
-                    <router-link to="/products">Shop
+                    <router-link to="/products">Shop |
+                       </router-link>
+                    
+                  </li>
+                  <li class="nav-item">
+                    <router-link to="/admin">admin 
                        </router-link>
                     
                   </li>

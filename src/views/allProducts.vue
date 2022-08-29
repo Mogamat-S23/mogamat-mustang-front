@@ -1,4 +1,7 @@
 <template>
+<header>
+
+</header>
   <productsCard/>
 </template>
 
@@ -12,6 +15,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  header{
+    background-color: black;
+    height: 10vh;
+  }
 </style>
