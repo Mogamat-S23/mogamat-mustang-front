@@ -6,8 +6,9 @@ export default createStore({
   state: {
     products: null,
     singleProduct: null,
-    user: null,
+    user: null || JSON.parse(localStorage.getItem('user')),
     msg : null,
+    admin : false,
   },
   getters: {},
   mutations: {
@@ -16,9 +17,18 @@ export default createStore({
     },
     stateUser(state, user) {
       state.user = user
+      localStorage.setItem('user', JSON.stringify(user))
     }
   },
   actions: {
+    admincheck(context){
+      let user = context.state.user
+      if(user != null){
+        if(user.userRole === 'admin'){
+          context.state.admin = true
+        }
+      }
+    },
     fetchProducts: async (context) => {
       await fetch('https://mogamatmustang.herokuapp.com/products')
         .then(products => products.json())
@@ -134,9 +144,30 @@ export default createStore({
         let user = data.results
         context.state.msg = data.msg
         context.commit("stateUser",user);
-
+        console.log(user)
+        if(user.userRole === 'admin'){
+          context.state.admin = true
+        }
       });
     },
+
+  //register 
+  register: async (context,data) => {
+    console.log("Sup")
+    await fetch("http://localhost:3000/register" , {
+      method:"POST",
+      body: JSON.stringify(data),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8'
+      }
+    })
+    .then(res => res.json())
+    .then(userData => {
+      context.state.msg = userData.msg
+      console.log(userData)})
+      // context.dispatch("login",data)
+  }
+  ,
     },
   modules: {},
 });

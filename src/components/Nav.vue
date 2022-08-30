@@ -24,6 +24,11 @@
                     
                   </li>
                   <li class="nav-item">
+                    <router-link to="/usertable">user  |
+                       </router-link>
+                    
+                  </li>
+                  <li class="nav-item">
                     <router-link to="/login">Login |
                        </router-link>
                     
@@ -52,7 +57,14 @@
 
 
 export default {
-   
+   computed: {
+    admin() {
+      return this.$store.state.admin
+    }
+   },
+   mounted() {
+    this.$store.dispatch("admincheck")
+   }
 }
 </script>
 

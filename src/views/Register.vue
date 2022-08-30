@@ -15,7 +15,7 @@
                     
                     <div class="form-group">
                       <label for="exampleInputEmail1">FirstName</label>
-                      <input type="firtName" name="firstName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Firstname"
+                      <input type="firtName" name="firstName" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter Firstname"
                       @click="reset"
                       v-model="firstName"
                       required />
@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Surname</label>
-                      <input type="surName" name="surName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Surname"
+                      <input type="surName" name="surName" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter Surname"
                       @click="reset"
                       v-model="surName"
                       required />
@@ -31,7 +31,7 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
+                      <input type="email" name="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter email"
                       @click="reset"
                       v-model="email"
                       required />
@@ -39,7 +39,7 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Password</label>
-                      <input type="password" name="password " class="form-control" id="exampleInputPassword1" placeholder="Password"
+                      <input type="password" name="password " class="form-control" id="" placeholder="Password"
                       required
                       v-model="password"/>
                     </div>
@@ -51,7 +51,7 @@
                         <p>checking...</p>
                     </div>
                   
-                    <button  type="button" @click="login" class="btn btn-success btn-block mt-3">Submit</button>
+                    <button  type="button" @click="register" class="btn btn-success btn-block mt-3">Submit</button>
                   </form>
             </div>
             <!-- <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4"></div> -->
@@ -64,7 +64,31 @@
 
 <script>
 export default {
+data(){
+        return{
+            firstName:"",
+            surName:"",
+            email:"",
+            password:"",
+        };
+    },
+    computed:{
+        msg() {
+            return this.$store.state.msg;
+        }
+    },
 
+      methods: {
+        register() {
+            const payload = {
+                firstName:this.firstName,
+                surName:this.surName,
+                email: this.email,
+                password: this.password
+            };
+            this.$store.dispatch("register", payload);
+        },
+    }
 }
 </script>
 
