@@ -1,13 +1,15 @@
 <template>
   <div v-if="mustangs">
         <div v-for="mustang in mustangs" :key="mustang.product_id" class="card" style="width: 18rem;">
-    <router-link :to="{name : 'singleProducts',params : {id : mustang.product_id} }">
         <img :src="mustang.mainImage" class="card-img-top" alt="...">
-    </router-link>
     <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">view</a>
+    <router-link :to="{name : 'singleProducts',params : {id : mustang.product_id} }">
+         <a href="#" class="btn btn-primary">view</a>
+    </router-link>
+        
+       
     </div>
         </div>
     </div>

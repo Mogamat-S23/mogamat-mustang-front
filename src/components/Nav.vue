@@ -19,7 +19,17 @@
                     
                   </li>
                   <li class="nav-item">
-                    <router-link to="/admin">admin 
+                    <router-link to="/admin">admin  |
+                       </router-link>
+                    
+                  </li>
+                  <li class="nav-item">
+                    <router-link to="/login">Login |
+                       </router-link>
+                    
+                  </li>
+                  <li class="nav-item">
+                    <router-link to="/register">Register
                        </router-link>
                     
                   </li>

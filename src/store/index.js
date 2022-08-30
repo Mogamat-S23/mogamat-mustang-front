@@ -5,12 +5,17 @@ import {
 export default createStore({
   state: {
     products: null,
-    singleProduct: null
+    singleProduct: null,
+    user: null,
+    msg : null,
   },
   getters: {},
   mutations: {
     stateProducts(state, products) {
       state.products = products
+    },
+    stateUser(state, user) {
+      state.user = user
     }
   },
   actions: {
@@ -111,6 +116,27 @@ export default createStore({
 
     },
 
-  },
-  modules: {}
-})
+    //login
+    login: async (context, data) => {
+      console.log(data);
+       fetch("http://localhost:3000/login", {
+        // mode:"no-cors",
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json; charset=UTF-8",
+          // "x-auth-token": context.state.token,
+        }
+      })
+      .then ((res) => res.json())
+      .then ((data) => {
+        console.log (data)
+        let user = data.results
+        context.state.msg = data.msg
+        context.commit("stateUser",user);
+
+      });
+    },
+    },
+  modules: {},
+});
