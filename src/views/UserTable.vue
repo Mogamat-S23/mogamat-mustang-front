@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-    <h2 style="color: black;">Admin Table</h2>
+    <h2 style="color: black;">User Table</h2>
     <table class="table">
       
       <thead>
@@ -21,31 +21,46 @@
           
         </tr>
       </thead>
-      <tbody v-if="products">
-            <tr v-for="product in products" :key="product.id">
-              <td>{{  }}</td>
-              <td>{{ }}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><button>delete</button>
-            <button>Edit</button>
+      <tbody v-if="users">
+            <tr v-for="user in users" :key="user.id">
+              <td>{{user.user_id  }}</td>
+              <td>{{user.firstName }}</td>
+            <td>{{user.surName}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.password}}</td>
+            <td><button data-bs-toggle="modal" :data-bs-target="'#updateuser'+user.user_id">
+                edit
+
+            </button>
+            <button @click="this.$store.dispatch('deleteUser', user.user_id)">delete</button>
             </td>
             
     
            
             
- 
+ <editUser :user="user"/>
           </tr> 
       </tbody>
-        <div v-else>No data</div>
+        <div v-else>No users</div>
     </table>
   </div>
 </template>
 
 <script>
-export default {
+import editUser from "@/components/editUser.vue"
 
+export default {
+components:{editUser},
+
+  mounted(){
+    this.$store.dispatch("fetchUsers")
+  },    
+
+  computed: {
+    users() {
+        return this.$store.state.users;
+    },
+  },
 }
 </script>
 

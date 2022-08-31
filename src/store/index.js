@@ -8,6 +8,8 @@ export default createStore({
     singleProduct: null,
     user: null || JSON.parse(localStorage.getItem('user')),
     msg : null,
+    users : null,
+    singleUser:null,
     admin : false,
   },
   getters: {},
@@ -166,8 +168,57 @@ export default createStore({
       context.state.msg = userData.msg
       console.log(userData)})
       // context.dispatch("login",data)
-  }
-  ,
+  },
+  fetchUsers: async (context) => {
+    await fetch('http://localhost:3000/users')
+      .then(users => users.json())
+      .then(usersJson => context.state.users = usersJson.user)
+      
+  },
+  getUser: async (context, id) => {
+    await fetch(`https://mogamatmustang.herokuapp.com/users/${id}`)
+      .then(res => res.json())
+      .then(data => context.state.user = data.user)
+      .then(console.log(context.state.singleUser))
+  },
+
+  // edit user
+  editUser: async (context, user) => {
+    // fetch("http://localhost:3000/products/" + product.id, {
+    fetch("http://localhost:3000/users/" + user.user_id, {
+        method: "PUT",
+        body: JSON.stringify(user),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          "x-auth-token": context.state.token,
+        }
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        // alert(data.msg);
+        console.log(data);
+        context.dispatch("fetchUsers");
+      });
+  },
+
+  // Deletes user from db
+  deleteUser: async (context, id) => {
+    // fetch("http://localhost:3000/products/" + id, {
+    fetch("http://localhost:3000/users/" + id, {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.msg)
+        context.dispatch("fetchUsers")
+
+      });
+
+  },
+
     },
   modules: {},
 });
