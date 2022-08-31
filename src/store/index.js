@@ -219,6 +219,70 @@ export default createStore({
 
   },
 
+  //cart
+    
+  getMustang: async (context, id) => {
+    // id = context.state.user.id
+    await fetch("http://localhost:3000/users/" + id + "/cart", {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        "x-auth-token": context.state.token,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        // context.commit("set cart", data);
+      });
+  },
+  addTocart: async (context, mustang, id) => {
+    id = context.state.user.id;
+    console.log(item);
+    await fetch("http://localhost:3000/users/" + id + "/cart", {
+      method: "POST",
+      body: JSON.stringify(mustang),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        "x-auth-token": context.state.token,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        context.dispatch("getMustang", id);
+      });
+  },
+  clearCart: async (context, id) => {
+    await fetch("http://localhost:3000/users/" + id + "/cart", {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  },
+  deleteFromcart: async (context, car, id) => {
+    id = context.state.user.id;
+    await fetch(
+      "http://localhost:3000/users/" + id + "/cart/" + car.cartid,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          "x-auth-token": context.state.token,
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        context.dispatch("getMustang", id);
+      });
+  },
     },
   modules: {},
 });
