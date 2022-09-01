@@ -29,7 +29,7 @@
               </h5>
               <h2>R{{ mustang[0].price }}</h2>
             <p class="card-text">
-              <button @click="add" class="button" type="submit"><span>Add to cart</span></button>
+              <button @click="this.$store.dispatch('addTocart', mustang[0])" class="button" type="submit"><span>Add to cart</span></button>
             </p>
             </div>
           </div>
@@ -42,7 +42,7 @@
 
 <script>
 export default {
-  props: ["product_id"],
+  props: ["id"],
   mounted(){
     this.$store.dispatch("getProduct", this.$route.params.id)
   },
@@ -51,6 +51,11 @@ export default {
       return this.$store.state.singleProduct;
     },
   },
+  methods:{
+    add(){
+      this.$store.dispatch("addTocart", this.id)
+    }
+  }
 }
 </script>
 

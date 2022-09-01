@@ -34,6 +34,9 @@
             <li class="nav-item">
               <router-link to="/register">Register </router-link>
             </li>
+            <!-- <li class="nav-item">
+              <router-link to="/userP">User Profile</router-link>
+            </li> -->
             <div v-if="user">
               <button
                 class="btn btn-primary"
@@ -41,8 +44,9 @@
                 data-bs-toggle="offcanvas"
                 data-bs-target="#carttitile"
                 aria-controls="offcanvasExample"
+                @click="this.$store.dispatch('getMustang', user.id)"
               >
-                Button with data-bs-target
+                <i class="bi bi-cart3">{{ num }}</i>
               </button>
               <!-- <button
                 class="btn btn-primary"
@@ -75,6 +79,18 @@ export default {
     },
     user() {
       return this.$store.state.user;
+    },
+
+    num: function () {
+      let Cnum = this.$store.state.mustangs;
+      if (Cnum === null || Cnum === undefined) {
+        Cnum = 0;
+        return Cnum;
+      } else {
+        // Cnum.length
+        let i = Cnum.length;
+        return (i);
+      }
     },
   },
   mounted() {

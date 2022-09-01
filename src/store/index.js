@@ -11,6 +11,7 @@ export default createStore({
     users : null,
     singleUser:null,
     admin : false,
+    mustangs: null,
   },
   getters: {},
   mutations: {
@@ -20,7 +21,10 @@ export default createStore({
     stateUser(state, user) {
       state.user = user
       localStorage.setItem('user', JSON.stringify(user))
-    }
+    },
+  stateMustangs(state, mustangs) {
+      state.mustangs = mustangs
+  }
   },
   actions: {
     admincheck(context){
@@ -32,12 +36,14 @@ export default createStore({
       }
     },
     fetchProducts: async (context) => {
+      // await fetch('http://localhost:3000/products')
       await fetch('https://mogamatmustang.herokuapp.com/products')
         .then(products => products.json())
         .then(productsJson => context.state.products = productsJson.mustangs)
         // .then(console.log(context.state.products))
     },
     getProduct: async (context, id) => {
+      // await fetch(`http://localhost:3000/products/${id}`)
       await fetch(`https://mogamatmustang.herokuapp.com/products/${id}`)
         .then(res => res.json())
         .then(data => context.state.singleProduct = data.mustangs)
@@ -233,12 +239,13 @@ export default createStore({
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
-        // context.commit("set cart", data);
+        context.commit("stateMustangs", data.mustangs);
       });
+      
   },
   addTocart: async (context, mustang, id) => {
     id = context.state.user.id;
-    console.log(item);
+    console.log(mustang);
     await fetch("http://localhost:3000/users/" + id + "/cart", {
       method: "POST",
       body: JSON.stringify(mustang),
@@ -254,6 +261,7 @@ export default createStore({
       });
   },
   clearCart: async (context, id) => {
+    id = context.state.user.id
     await fetch("http://localhost:3000/users/" + id + "/cart", {
       method: "DELETE",
       headers: {
@@ -263,17 +271,19 @@ export default createStore({
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        context.dispatch("getMustang", id)
       });
   },
   deleteFromcart: async (context, car, id) => {
+    console.log(car);
     id = context.state.user.id;
     await fetch(
-      "http://localhost:3000/users/" + id + "/cart/" + car.cartid,
+      "http://localhost:3000/users/" + id + "/cart/" + car.cart_id,
       {
         method: "DELETE",
         headers: {
           "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
+          // "x-auth-token": context.state.token,
         },
       }
     )
