@@ -32,7 +32,10 @@
               <router-link to="/login">Login | </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/register">Register </router-link>
+              <router-link to="/register">Register | </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/myprofile">my profile | </router-link>
             </li>
             <!-- <li class="nav-item">
               <router-link to="/userP">User Profile</router-link>
