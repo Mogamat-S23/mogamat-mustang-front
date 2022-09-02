@@ -2,6 +2,8 @@ import {
   createStore
 } from 'vuex'
 
+//  pull me
+
 export default createStore({
   state: {
     products: null,
