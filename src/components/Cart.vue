@@ -38,6 +38,37 @@ export default {
       return this.$store.state.mustangs;
     },
   },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   mounted() {
     // this.$store.dispatch("getMustang", this.id)
   },
