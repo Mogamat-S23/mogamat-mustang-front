@@ -183,7 +183,7 @@ export default createStore({
       .then(usersJson => context.state.users = usersJson.user)
       
   },
-  getUser: async (context, id) => {
+  getUser: async (context, id) => { 
     await fetch(`https://mogamatmustang.herokuapp.com/users/${id}`)
       .then(res => res.json())
       .then(data => context.state.user = data.user)

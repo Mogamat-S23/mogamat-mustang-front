@@ -1,46 +1,51 @@
 <template>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light container">
+    
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+  Toggle static offcanvas
+</button>
+
+<div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="staticBackdropLabel">Offcanvas</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+     <nav class="navbar navbar-expand-lg navbar-light container">
       <div class="container-fluid">
-        <a class="navbar-brand text-white" href="#">Navbar</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="text-white">=</span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
+          <ul>
             <li class="nav-item">
-              <router-link to="/">Home | </router-link>
+              <router-link to="/">Home  </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/products">Shop | </router-link>
+              <router-link to="/products">Shop  </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/admin">admin | </router-link>
+              <router-link to="/admin">admin  </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/usertable">user | </router-link>
+              <router-link to="/usertable">user  </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/login">Login | </router-link>
+              <router-link to="/login">Login  </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/register">Register | </router-link>
+              <router-link to="/register">Register  </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/myprofile">my profile | </router-link>
+              <router-link to="/myprofile">my profile  </router-link>
             </li>
-            <!-- <li class="nav-item">
-              <router-link to="/userP">User Profile</router-link>
-            </li> -->
-            <div v-if="user">
+            
+           
+          </ul>
+        </div>
+    </nav>
+      </div>
+    </div>
+  </div>
+
+     <div v-if="user">
               <button
                 class="btn btn-primary"
                 type="button"
@@ -61,10 +66,6 @@
                 Toggle right offcanvas
               </button> -->
             </div>
-          </ul>
-        </div>
-      </div>
-    </nav>
     <cart />
   </header>
 </template>
@@ -103,9 +104,17 @@ export default {
 </script>
 
 <style scoped>
-nav {
+header {
   background-color: transparent;
   overflow: hidden;
   position: fixed;
+}
+
+ul{
+  list-style: none;
+}
+
+nav{
+  z-index: 2;
 }
 </style>
