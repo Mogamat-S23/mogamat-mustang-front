@@ -6,7 +6,7 @@
     <div>
         <div class="row">
             <div class="col-md-6">
-                <img class="mx-auto img-fluid rounded-circle" :src="user.profile" alt="">
+                <img class="mx-auto img-fluid rounded-circle" :src="user.userProfile" alt="">
                 <h2>
                     User: {{user.firstName}}
                 </h2>
@@ -52,7 +52,23 @@
                   placeholder="Email"
                 />
               </div>
-               
+            <!-- Profile picture -->
+              <div class="mb-3">
+                <label for="addPrice" class="form-label"
+                style="border-radiuse:20%;">Profile picture</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="edit email"
+                  id="edit profile"
+                  v-model="user.userProfile"
+                  placeholder="profile picture url"
+                />
+              </div>
+              
+               <!-- <div class="col-6">
+                <img src="https://i.postimg.cc/TPNnfPqV/plchldr798automanager.png" alt="">
+               </div> -->
               <button type="button"
               class="btn btn-primary" 
               @click="this.$store.dispatch('editUser', user)">

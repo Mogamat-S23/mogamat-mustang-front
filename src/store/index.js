@@ -35,6 +35,7 @@ export default createStore({
         if(user.userRole === 'admin'){
           context.state.admin = true
         }
+        context.dispatch('getMustang')
       }
     },
     fetchProducts: async (context) => {
@@ -192,8 +193,9 @@ export default createStore({
 
   // edit user
   editUser: async (context, user) => {
+    console.log(user);
     // fetch("http://localhost:3000/products/" + product.id, {
-    fetch("http://localhost:3000/users/" + user.user_id, {
+    fetch("http://localhost:3000/users/" + user.id, {
         method: "PUT",
         body: JSON.stringify(user),
         headers: {
@@ -230,6 +232,7 @@ export default createStore({
   //cart
     
   getMustang: async (context, id) => {
+    id = context.state.user.id
     // id = context.state.user.id
     await fetch("http://localhost:3000/users/" + id + "/cart", {
       method: "GET",

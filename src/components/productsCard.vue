@@ -41,4 +41,5 @@ export default {
   gap:35px
  }
 
+
 </style>

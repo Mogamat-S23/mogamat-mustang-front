@@ -1,18 +1,16 @@
 <template>
-<header>
-    
-</header>
-<body>
+
+
 
 
     <div class="video-container">
 
-    <div id="urmom" style="width:100%;height:0px;position:relative;padding-bottom:56.250%;"><iframe src="https://streamable.com/e/zw3r1y?autoplay=1&nocontrols=1" frameborder="0" width="100%" height="100%" allowfullscreen allow="autoplay" style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+    <div  style="width:100%;height:0px;position:relative;padding-bottom:56.250%;"><iframe src="https://streamable.com/e/zw3r1y?autoplay=1&nocontrols=1" frameborder="0" width="100%" height="100%" allowfullscreen allow="autoplay" style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
 
     </div>
 
     
-</body>
+
 
 </template>
 
@@ -27,11 +25,11 @@ export default{
 
 
 <style scoped>
-header {
+/* header {
   background-color: transparent;
   overflow: hidden;
   position: fixed;
-}
+} */
 
 /* landing */
 .showcase {
