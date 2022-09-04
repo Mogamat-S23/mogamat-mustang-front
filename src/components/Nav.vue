@@ -32,7 +32,7 @@
 
 <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
   <div class="offcanvas-header">
-    <h1 class="offcanvas-title" id="staticBackdropLabel">  <img class="img" src="https://i.postimg.cc/pXCh59Ts/Untitlr4teyued-1.png" alt="" width="70px" height="70px"><span>Mogamats </span><span> Mustangs</span></h1>
+    <h1 class="offcanvas-title" id="staticBackdropLabel">  <img class="img" src="https://i.postimg.cc/pXCh59Ts/Untitlr4teyued-1.png" alt="" width="70px" height="70px"><span>Mogamats </span><span id="mustangs"> Mustangs</span></h1>
     <button id="x" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
  <br id="break">
@@ -131,6 +131,9 @@ img{
 }
 span{
   margin-right: 0px;
+}
+#mustangs{
+  margin-left: -10px;
 }
 .link{
   text-decoration: none;

@@ -22,7 +22,7 @@
                     </li>
                     <li>
                         <router-link to="/products"
-          > Shop</router-link
+          > SHOP</router-link
         >
 
                     </li>
@@ -84,6 +84,35 @@
 
     
     <style scoped>
+
+.bi-instagram{
+    font-size: 2rem;
+    margin: 5px;
+    color: white;
+}
+.bi-instagram:hover{
+    color: rgba(255, 151, 0, 1);
+}
+.bi-facebook{
+    font-size: 2rem;
+    margin: 2px;
+    color: white;
+}
+.bi-facebook:hover{
+    
+    color: rgba(255, 151, 0, 1);
+}
+
+.bi-twitter{
+    font-size: 2rem;
+    margin: 2px;
+    color: white;
+}
+.bi-twitter:hover{
+    
+    color: rgba(255, 151, 0, 1);
+}
+
     .contactdetails > ul {
         display: block;
         list-style-type: disc;
@@ -106,7 +135,7 @@
             
         }
          ul li a{
-            color: #f4c273;
+            color:  rgba(255, 151, 0, 1) ;
             font-size: 20px;
             text-decoration-line: none;
             
@@ -116,9 +145,7 @@
         text-decoration-line: underline;
      } 
         
-    i:hover{
-        color:#f4c273;
-    }
+   
         
          ul li a:hover{
             color: white;
@@ -127,7 +154,7 @@
         }
        
         span{
-            color:#f4c273;
+            color:rgba(255, 151, 0, 1);
         }
         #contact {
             margin-right: 10%;
@@ -142,7 +169,7 @@
         background: 
         linear-gradient(rgba(0, 0, 0, 0.7), black),
         
-        url("https://i.postimg.cc/hPtvLQqJ/70667a.jpg");
+        url("https://i.postimg.cc/QCQhBxLQ/2034-612x612.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -151,6 +178,7 @@
      }
       .container{
         padding-top: 10%;
+        
         
       }
       #hr{

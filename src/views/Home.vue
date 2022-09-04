@@ -33,7 +33,7 @@ background-repeat: no-repeat;
 background-size: cover;
 background-attachment: fixed;
 background-position: center;
-height: 100vh;
+height: 120vh;
 } 
 
 
