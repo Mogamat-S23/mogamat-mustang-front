@@ -5,8 +5,8 @@
         <div v-for="mustang in mustangs" :key="mustang.product_id" class="card" style="width: 18rem;">
         <img :src="mustang.mainImage" class="card-img-top" alt="...">
     <div class="card-body">
-        <h5 class="card-title">{{mustang.productName}}</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <h3 class="card-title">{{mustang.productName}}</h3>
+        <h5 class="card-text">R{{mustang.price}}</h5>
     <router-link :to="{name : 'singleProducts',params : {id : mustang.product_id} }">
          <a href="#" class="btn btn-primary">view</a>
     </router-link>
@@ -41,5 +41,16 @@ export default {
   gap:35px
  }
 
+ .card-img-top {
+  padding: 50px;
+  
+  transition: transform .2s; /* Animation */
+  width: 280px;
+  height: 300px;
+  margin: 0;
+}
 
+.card-img-top:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
 </style>

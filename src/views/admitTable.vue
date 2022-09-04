@@ -49,7 +49,7 @@
             
             <td>{{ product.carDescription}}</td>
             <!-- <td><img :src="product.image2" alt="" /></td> -->
-            <td>R{{ product.price }}.00</td>
+            <td>R{{ product.price }}</td>
             <td>{{ product.model}}</td>
             <td>{{ product.engine}}</td>
             <td>{{ product.bodyType}}</td>

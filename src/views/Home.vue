@@ -1,13 +1,15 @@
 <template>
 
+ <div id="background" class="data">
+
+ </div>
 
 
-
-    <div class="video-container">
+    <!-- <div class="video-container">
 
     <div  style="width:100%;height:0px;position:relative;padding-bottom:56.250%;"><iframe src="https://streamable.com/e/zw3r1y?autoplay=1&nocontrols=1" frameborder="0" width="100%" height="100%" allowfullscreen allow="autoplay" style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
 
-    </div>
+    </div> -->
 
     
 
@@ -25,14 +27,18 @@ export default{
 
 
 <style scoped>
-/* header {
-  background-color: transparent;
-  overflow: hidden;
-  position: fixed;
-} */
+#background{
+background-image: url('https://i.postimg.cc/7ZRxYbjG/725184.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+background-position: center;
+
+height: 100vh;
+} 
 
 /* landing */
-.showcase {
+/* .showcase {
     overflow-x: hidden;
     height: 87vh;
     display: flex;
@@ -77,10 +83,10 @@ width: 100%;
     top: 0;
     left: 0;
     position: absolute;
-}
+} */
 
 
-#data {
+.data {
   z-index: 1;
   margin-top: -10rem;
 }

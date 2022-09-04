@@ -148,10 +148,10 @@
                 <input
                   class="form-control"
                   type="text"
-                  name="addQuantity"
+                  name="addHandling"
                   id="addQuantity"
-                  v-model="product.seatQuantity"
-                  placeholder="Seat Quantity"
+                  v-model="product.handling"
+                  placeholder="Handling"
                 />
               </div>
              
