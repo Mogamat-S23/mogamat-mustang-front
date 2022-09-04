@@ -1,7 +1,7 @@
 <template>
 
  <div id="background" class="data">
-
+    
  </div>
 
 
@@ -33,9 +33,9 @@ background-repeat: no-repeat;
 background-size: cover;
 background-attachment: fixed;
 background-position: center;
-
 height: 100vh;
 } 
+
 
 /* landing */
 /* .showcase {

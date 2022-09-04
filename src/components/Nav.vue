@@ -32,34 +32,35 @@
 
 <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="staticBackdropLabel">Offcanvas</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <h1 class="offcanvas-title" id="staticBackdropLabel">  <img class="img" src="https://i.postimg.cc/pXCh59Ts/Untitlr4teyued-1.png" alt="" width="70px" height="70px"><span>Mogamats </span><span> Mustangs</span></h1>
+    <button id="x" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
+ <br id="break">
   <div class="offcanvas-body">
     <!-- <div>
      <nav class="navbar navbar-expand-lg navbar-light container">
       <div class="container-fluid"> -->
           <ul>
-            <li >
-              <router-link to="/">Home  </router-link>
+            <li id="list">
+              <router-link to="/" class="link">Home</router-link>
             </li>
-            <li >
-              <router-link to="/products">Shop  </router-link>
+            <li id="list">
+              <router-link to="/products" class="link">Shop  </router-link>
             </li>
-            <li >
-              <router-link to="/admin">admin  </router-link>
+            <li id="list" >
+              <router-link to="/admin" class="link">admin  </router-link>
             </li>
-            <li >
-              <router-link to="/usertable">user  </router-link>
+            <li id="list">
+              <router-link to="/usertable" class="link">user  </router-link>
             </li>
-            <li >
-              <router-link to="/login">Login  </router-link>
+            <li id="list">
+              <router-link to="/login" class="link">Login  </router-link>
             </li>
-            <li >
-              <router-link to="/register">Register  </router-link>
+            <li id="list">
+              <router-link to="/register" class="link">Register  </router-link>
             </li>
-            <li >
-              <router-link to="/myprofile">my profile  </router-link>
+            <li id="list">
+              <router-link to="/myprofile" class="link">my profile  </router-link>
             </li>
             
            
@@ -120,6 +121,46 @@ export default {
   overflow: hidden;
   
 } */
+
+h1{
+  color: white;
+}
+img{
+ margin-left: 95px;
+ margin-right: 75px;
+}
+span{
+  margin-right: 0px;
+}
+.link{
+  text-decoration: none;
+  color: rgba(251, 75, 2, 1);
+  
+}
+#list{
+  margin-top: 30px;
+   /* the color  */
+   --c: rgba(255, 151, 0, 1);
+  /* the height */
+  --h: 1.2em;
+
+  line-height: var(--h);  
+  color: #0000;
+  overflow: hidden;
+  text-shadow: 
+    0 calc(-1 * var(--h) * var(--_i, 0)) var(--c), 
+    0 calc(var(--h) * (1 - var(--_i, 0))) #fff;
+  background: 
+    linear-gradient(var(--c) 0 0) no-repeat
+    calc(200% - var(--_i, 0) * 100%) 100% / 200% calc(100% * var(--_i, 0) + .08em);
+  transition: .3s calc(var(--_i, 0) * .3s), background-position .3s calc(.3s - calc(var(--_i, 0) * .3s));
+}
+
+
+#list:hover{
+  --_i: 1;
+  color: white;
+}
 .custom-btn {
  width: 130px;
  height: 40px;
@@ -139,6 +180,10 @@ export default {
  outline: none;
 }
 
+.line{
+  color: linear-gradient(0deg, rgba(255, 151, 0, 1) 0%, rgba(251, 75, 2, 1) 100%);
+  background-color: black;
+}
 .btn {
  background: linear-gradient(0deg, rgba(255, 151, 0, 1) 0%, rgba(251, 75, 2, 1) 100%);
  line-height: 42px;
@@ -229,6 +274,7 @@ export default {
 ul{
   padding: 0;
   list-style: none;
+  
 }
 
 /* nav{
@@ -244,7 +290,19 @@ ul{
   margin: 10px;
 }
 
+
 .offcanvas-body{
+  background-color: black; 
+  font-size: 30px;
+  
+}
+.offcanvas-header{
   background-color: black;
 }
+
+#x{
+ background-color: white;
+ margin-bottom: 120px;
+}
+
 </style>

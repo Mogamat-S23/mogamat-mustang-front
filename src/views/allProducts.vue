@@ -3,7 +3,10 @@
   
   </header>
 <div id="background">
-  <productsCard/>
+  <div class="container">
+    <productsCard/>
+  </div>
+
 </div>
   
 </template>
@@ -24,12 +27,19 @@ export default {
   height: 10vh;
   margin-bottom: 50px;
  }
- /* #background{
-  background-image: url('https://i.postimg.cc/JnFNP4hz/istockphoto-1281323504-170667a.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 200vh;
- } */
+ .contaner{
+  min-height: fit-content;
+ 
+ }
+ #background{
+  background-image: url('https://i.postimg.cc/7ZRxYbjG/725184.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+background-position: center;
+
+/* height: 250vh; */
+ }
 
  /* From uiverse.io by @alexruix */
 /* .group {
