@@ -3,7 +3,7 @@
   <button id="navbutton" class="custom-btn btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
   <i class="bi bi-list"></i>
 </button>
-<button id="cartbutton" class="custom-btn btn" type="button" @click="logout">
+<button id="cartbutton" class="custom-btn btn " type="button" @click="logout">
   logout
 </button>
 <div  v-if="user">
@@ -51,7 +51,7 @@
               <router-link to="/admin" class="link">admin  </router-link>
             </li>
             <li id="list">
-              <router-link to="/usertable" class="link">user  </router-link>
+              <router-link to="/usertable" class="link">user table  </router-link>
             </li>
             <li id="list">
               <router-link to="/login" class="link">Login  </router-link>
@@ -287,6 +287,7 @@ ul{
 #navbutton{
   width: 150px;
   margin: 10px;
+  
 }
 
 #cartbutton{

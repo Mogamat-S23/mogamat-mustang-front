@@ -55,7 +55,7 @@
             <!-- Profile picture -->
               <div class="mb-3">
                 <label for="addPrice" class="form-label"
-                style="border-radiuse:20%;">Profile picture</label>
+                style="border-radiuse:20%;">Profile picture url</label>
                 <input
                   class="form-control"
                   type="text"
