@@ -97,8 +97,8 @@ export default createStore({
         })
         .then((res) => res.json())
         .then((data) => {
-          alert(data.msg);
-          context.dispatch("products");
+          // alert(data.msg);
+          context.dispatch("fetchProducts");
         });
     },
     // updates 
