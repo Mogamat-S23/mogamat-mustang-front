@@ -1,5 +1,7 @@
 <template>
+  <div class="single">
 
+  
   <div id="singleprod" class="container mt-2 d-flex justify-content-center align-items-center">
     <div class="row" v-if="mustang">
       <div class="col-md-12">
@@ -42,7 +44,7 @@
               
               </p>
             <p class="card-text">
-              <button @click="this.$store.dispatch('addTocart', mustang[0])" class="button" type="submit"><span>Add to cart</span></button>
+              <button @click="this.$store.dispatch('addTocart', mustang[0])" class="btn btn-outline-light" type="submit" id="btn"><span>Add to cart</span></button>
             </p>
             </div>
           </div>
@@ -51,6 +53,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -82,11 +85,92 @@ export default {
   padding: 5px;
 }
 
-#singleprod{
-  background-image: url('https://i.postimg.cc/tgvh2d1S/garage-underground-store-closed.jpg');
+.single{
+  background-image: url('https://i.postimg.cc/j2Y9pc7k/orza-Horizon-4.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   aspect-ratio: 1;
 }
+.btn:before,
+.btn:after {
+ position: absolute;
+ content: "";
+ right: 0;
+ bottom: 0;
+ background: rgba(251, 75, 2, 1);
+ /* box-shadow: -7px -7px 20px 0px rgba(255, 255, 255, .9),
+        -4px -4px 5px 0px rgba(255, 255, 255, .9),
+        7px 7px 20px 0px rgba(0, 0, 0, .2),
+        4px 4px 5px 0px rgba(0, 0, 0, .3); */
+ transition: all 0.3s ease;
+}
+
+.btn:before {
+ height: 0%;
+ width: 2px;
+}
+
+.btn:after {
+ width: 0%;
+ height: 2px;
+}
+
+.btn:hover {
+ color: rgba(251, 75, 2, 1);
+ background: transparent;
+}
+
+.btn:hover:before {
+ height: 100%;
+}
+
+.btn:hover:after {
+ width: 100%;
+}
+
+.btn span:before,
+.btn span:after {
+ position: absolute;
+ content: "";
+ left: 0;
+ top: 0;
+ background: rgba(251, 75, 2, 1);
+ /* box-shadow: -7px -7px 20px 0px rgba(255, 255, 255, .9),
+        -4px -4px 5px 0px rgba(255, 255, 255, .9),
+        7px 7px 20px 0px rgba(0, 0, 0, .2),
+        4px 4px 5px 0px rgba(0, 0, 0, .3); */
+ transition: all 0.3s ease;
+}
+
+.btn span:before {
+ width: 2px;
+ height: 0%;
+}
+
+.btn span:after {
+ height: 2px;
+ width: 0%;
+}
+
+.btn span:hover:before {
+ height: 100%;
+}
+
+.btn span:hover:after {
+ width: 100%;
+}
+
+
+.card{
+  border-top: 3px solid rgba(251, 75, 2, 1);
+  border-bottom: 3px solid rgba(251, 75, 2, 1);
+  border-left: 3px solid rgba(255, 151, 0, 1);
+  border-right:3px solid rgba(255, 151, 0, 1);
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+}
+
+
 </style>

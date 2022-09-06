@@ -1,24 +1,50 @@
 <template>
   <!-- <header> -->
-    <form action="" class="search-bar">
+   
+
+    
+
+    
+    <div class="container" id="filter">
+      <div class="row">
+        <div class="col-md-6" id="search">
+          <form action="" class="search-bar">
       <input
       class="form-control"
         type="search"
         name="search"
         pattern=".*\S.*"
         v-model="search"
+        id="searchicon"
+        placeholder="search..."
         required
+        
       />
-      <!-- <button class="search-btn" type="submit">
-		<span>Search</span>
-	</button> -->
-  <select class="form-control" name="" id="" v-model="gear">
+      </form>
+        </div>
+     <div class="col-md-6" id="filter">
+      <div>
+      <form class="filter">
+      <select class="form-control" name="" id="" v-model="gear">
   <option value="All" selected disabled>Sort by Transmission Type</option>
   <option value="All">All</option>
   <option value="Manual">Manual</option>
   <option value="Automatic">Automatic</option>
   </select>
     </form>
+    </div>
+     </div>
+   
+      </div>
+
+    </div>
+  
+
+    
+      <!-- <button class="search-btn" type="submit">
+		<span>Search</span>
+	</button> -->
+  
   <!-- </header> -->
 
   <div class="container-fluid">
@@ -36,13 +62,21 @@
           <router-link
             :to="{ name: 'singleProducts', params: { id: mustang.product_id } }"
           >
-            <a href="#" class="btn btn-primary">view</a>
+            <a href="#" class="btn btn-primary" id="btn" >view</a>
           </router-link>
         </div>
       </div>
     </div>
-    <div v-else>No mustangs in garage</div>
+    <div v-else><svg class="pl" width="128px" height="128px" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <circle class="pl__ring1" cx="64" cy="64" r="60" fill="none" stroke="hsl(3,90%,55%)" stroke-width="8" transform="rotate(-90,64,64)" stroke-linecap="round" stroke-dasharray="377 377" stroke-dashoffset="-376.4"></circle>
+  <circle class="pl__ring2" cx="64" cy="64" r="52.5" fill="none" stroke="hsl(13,90%,55%)" stroke-width="7" transform="rotate(-90,64,64)" stroke-linecap="round" stroke-dasharray="329.9 329.9" stroke-dashoffset="-329.3"></circle>
+  <circle class="pl__ring3" cx="64" cy="64" r="46" fill="none" stroke="hsl(23,90%,55%)" stroke-width="6" transform="rotate(-90,64,64)" stroke-linecap="round" stroke-dasharray="289 289" stroke-dashoffset="-288.6"></circle>
+  <circle class="pl__ring4" cx="64" cy="64" r="40.5" fill="none" stroke="hsl(33,90%,55%)" stroke-width="5" transform="rotate(-90,64,64)" stroke-linecap="round" stroke-dasharray="254.5 254.5" stroke-dashoffset="-254"></circle>
+  <circle class="pl__ring5" cx="64" cy="64" r="36" fill="none" stroke="hsl(43,90%,55%)" stroke-width="4" transform="rotate(-90,64,64)" stroke-linecap="round" stroke-dasharray="226.2 226.2" stroke-dashoffset="-225.8"></circle>
+  <circle class="pl__ring6" cx="64" cy="64" r="32.5" fill="none" stroke="hsl(53,90%,55%)" stroke-width="3" transform="rotate(-90,64,64)" stroke-linecap="round" stroke-dasharray="204.2 204.2" stroke-dashoffset="-203.9"></circle>
+</svg></div>
   </div>
+
 </template>
 
 <script>
@@ -80,16 +114,124 @@ export default {
 
 <style scoped>
 /*  */
+
+.card{
+  border-top: 3px solid rgba(251, 75, 2, 1);
+  border-bottom: 3px solid rgba(251, 75, 2, 1);
+  border-left: 3px solid rgba(255, 151, 0, 1);
+  border-right:3px solid rgba(255, 151, 0, 1);
+}
+
+#filter{
+  margin-top: 25px;
+  
+}
+
+.form-control {
+    display: block;
+    width: 75%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background:linear-gradient(0deg, rgba(255, 151, 0, 1) 0%, rgba(251, 75, 2, 1) 100%);;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
 header {
   background-color: black;
   height: 13vh;
   margin-bottom: 50px;
 }
+#btn{
+  background: linear-gradient(0deg, rgba(255, 151, 0, 1) 0%, rgba(251, 75, 2, 1) 100%);
+  width: 120px;
+  margin-bottom: 5px;
+
+}
+.btn:before,
+.btn:after {
+ position: absolute;
+ content: "";
+ right: 0;
+ bottom: 0;
+ background: rgba(251, 75, 2, 1);
+ /* box-shadow: -7px -7px 20px 0px rgba(255, 255, 255, .9),
+        -4px -4px 5px 0px rgba(255, 255, 255, .9),
+        7px 7px 20px 0px rgba(0, 0, 0, .2),
+        4px 4px 5px 0px rgba(0, 0, 0, .3); */
+ transition: all 0.3s ease;
+}
+
+.btn:before {
+ height: 0%;
+ width: 2px;
+}
+
+.btn:after {
+ width: 0%;
+ height: 2px;
+}
+
+.btn:hover {
+ color: rgba(251, 75, 2, 1);
+ background: transparent;
+}
+
+.btn:hover:before {
+ height: 100%;
+}
+
+.btn:hover:after {
+ width: 100%;
+}
+
+.btn span:before,
+.btn span:after {
+ position: absolute;
+ content: "";
+ left: 0;
+ top: 0;
+ background: rgba(251, 75, 2, 1);
+ /* box-shadow: -7px -7px 20px 0px rgba(255, 255, 255, .9),
+        -4px -4px 5px 0px rgba(255, 255, 255, .9),
+        7px 7px 20px 0px rgba(0, 0, 0, .2),
+        4px 4px 5px 0px rgba(0, 0, 0, .3); */
+ transition: all 0.3s ease;
+}
+
+.btn span:before {
+ width: 2px;
+ height: 0%;
+}
+
+.btn span:after {
+ height: 2px;
+ width: 0%;
+}
+
+.btn span:hover:before {
+ height: 100%;
+}
+
+.btn span:hover:after {
+ width: 100%;
+}
+
 * {
   border: 0;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+ 
 }
 :root {
   font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1920 - 320));
@@ -145,7 +287,7 @@ body {
 .search-bar input {
   background: transparent;
   border-radius: 1.5em;
-  box-shadow: 0 0 0 0.4em rgba(251, 75, 2, 1) inset;
+  box-shadow: 0 0 0 0.4em rgba(251, 75, 2, 1) inset !important;
   padding: 0.75em;
   transform: translate(0.5em, 0.5em) scale(0.5);
   transform-origin: 100% 0;
@@ -164,7 +306,7 @@ body {
   transform: scale(1);
 }
 .search-btn {
-  background: rgba(255, 151, 0, 1);
+  background: rgba(255, 151, 0, 1) !important;
   border-radius: 0 0.75em 0.75em 0 / 0 1.5em 1.5em 0;
   padding: 0.75em;
   position: relative;
@@ -219,15 +361,239 @@ body {
 .search-bar input:focus + .search-btn:hover,
 .search-bar input:valid + .search-btn:hover,
 .search-bar input:valid:not(:focus) + .search-btn:focus {
-  background: linear-gradient(
+   background: linear-gradient(
     0deg,
     rgba(255, 151, 0, 1) 0%,
     rgba(251, 75, 2, 1) 100%
-  );
+  ); 
 }
 .search-bar input:focus + .search-btn:active,
 .search-bar input:valid + .search-btn:active {
   transform: translateY(1px);
+}
+
+/* From uiverse.io by @harman-kanda */
+/* From cssbuttons.io by @harmankanda.github.io/New */
+
+.pl {
+ width: 5em;
+ height: 5em;
+}
+
+.pl circle {
+ transform-box: fill-box;
+ transform-origin: 50% 50%;
+}
+
+.pl__ring1 {
+ animation: ring1 4s 0s ease-in-out infinite;
+}
+
+.pl__ring2 {
+ animation: ring2 4s 0.04s ease-in-out infinite;
+}
+
+.pl__ring3 {
+ animation: ring3 4s 0.08s ease-in-out infinite;
+}
+
+.pl__ring4 {
+ animation: ring4 4s 0.12s ease-in-out infinite;
+}
+
+.pl__ring5 {
+ animation: ring5 4s 0.16s ease-in-out infinite;
+}
+
+.pl__ring6 {
+ animation: ring6 4s 0.2s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes ring1 {
+ from {
+  stroke-dashoffset: -376.237129776;
+  transform: rotate(-0.25turn);
+  animation-timing-function: ease-in;
+ }
+
+ 23% {
+  stroke-dashoffset: -94.247778;
+  transform: rotate(1turn);
+  animation-timing-function: ease-out;
+ }
+
+ 46%, 50% {
+  stroke-dashoffset: -376.237129776;
+  transform: rotate(2.25turn);
+  animation-timing-function: ease-in;
+ }
+
+ 73% {
+  stroke-dashoffset: -94.247778;
+  transform: rotate(3.5turn);
+  animation-timing-function: ease-out;
+ }
+
+ 96%, to {
+  stroke-dashoffset: -376.237129776;
+  transform: rotate(4.75turn);
+ }
+}
+
+@keyframes ring2 {
+ from {
+  stroke-dashoffset: -329.207488554;
+  transform: rotate(-0.25turn);
+  animation-timing-function: ease-in;
+ }
+
+ 23% {
+  stroke-dashoffset: -82.46680575;
+  transform: rotate(1turn);
+  animation-timing-function: ease-out;
+ }
+
+ 46%, 50% {
+  stroke-dashoffset: -329.207488554;
+  transform: rotate(2.25turn);
+  animation-timing-function: ease-in;
+ }
+
+ 73% {
+  stroke-dashoffset: -82.46680575;
+  transform: rotate(3.5turn);
+  animation-timing-function: ease-out;
+ }
+
+ 96%, to {
+  stroke-dashoffset: -329.207488554;
+  transform: rotate(4.75turn);
+ }
+}
+
+@keyframes ring3 {
+ from {
+  stroke-dashoffset: -288.4484661616;
+  transform: rotate(-0.25turn);
+  animation-timing-function: ease-in;
+ }
+
+ 23% {
+  stroke-dashoffset: -72.2566298;
+  transform: rotate(1turn);
+  animation-timing-function: ease-out;
+ }
+
+ 46%, 50% {
+  stroke-dashoffset: -288.4484661616;
+  transform: rotate(2.25turn);
+  animation-timing-function: ease-in;
+ }
+
+ 73% {
+  stroke-dashoffset: -72.2566298;
+  transform: rotate(3.5turn);
+  animation-timing-function: ease-out;
+ }
+
+ 96%, to {
+  stroke-dashoffset: -288.4484661616;
+  transform: rotate(4.75turn);
+ }
+}
+
+@keyframes ring4 {
+ from {
+  stroke-dashoffset: -253.9600625988;
+  transform: rotate(-0.25turn);
+  animation-timing-function: ease-in;
+ }
+
+ 23% {
+  stroke-dashoffset: -63.61725015;
+  transform: rotate(1turn);
+  animation-timing-function: ease-out;
+ }
+
+ 46%, 50% {
+  stroke-dashoffset: -253.9600625988;
+  transform: rotate(2.25turn);
+  animation-timing-function: ease-in;
+ }
+
+ 73% {
+  stroke-dashoffset: -63.61725015;
+  transform: rotate(3.5turn);
+  animation-timing-function: ease-out;
+ }
+
+ 96%, to {
+  stroke-dashoffset: -253.9600625988;
+  transform: rotate(4.75turn);
+ }
+}
+
+@keyframes ring5 {
+ from {
+  stroke-dashoffset: -225.7422778656;
+  transform: rotate(-0.25turn);
+  animation-timing-function: ease-in;
+ }
+
+ 23% {
+  stroke-dashoffset: -56.5486668;
+  transform: rotate(1turn);
+  animation-timing-function: ease-out;
+ }
+
+ 46%, 50% {
+  stroke-dashoffset: -225.7422778656;
+  transform: rotate(2.25turn);
+  animation-timing-function: ease-in;
+ }
+
+ 73% {
+  stroke-dashoffset: -56.5486668;
+  transform: rotate(3.5turn);
+  animation-timing-function: ease-out;
+ }
+
+ 96%, to {
+  stroke-dashoffset: -225.7422778656;
+  transform: rotate(4.75turn);
+ }
+}
+
+@keyframes ring6 {
+ from {
+  stroke-dashoffset: -203.795111962;
+  transform: rotate(-0.25turn);
+  animation-timing-function: ease-in;
+ }
+
+ 23% {
+  stroke-dashoffset: -51.05087975;
+  transform: rotate(1turn);
+  animation-timing-function: ease-out;
+ }
+
+ 46%, 50% {
+  stroke-dashoffset: -203.795111962;
+  transform: rotate(2.25turn);
+  animation-timing-function: ease-in;
+ }
+
+ 73% {
+  stroke-dashoffset: -51.05087975;
+  transform: rotate(3.5turn);
+  animation-timing-function: ease-out;
+ }
+
+ 96%, to {
+  stroke-dashoffset: -203.795111962;
+  transform: rotate(4.75turn);
+ }
 }
 
 @media screen and (prefers-color-scheme: dark) {
@@ -238,9 +604,9 @@ body {
   body {
     background: #171717;
   }
-  .search-bar input {
+  /* .search-bar input {
     box-shadow: 0 0 0 0.4em #f1f1f1 inset;
-  }
+  } */
   .search-bar input:focus,
   .search-bar input:valid {
     background: #3d3d3d;
@@ -250,13 +616,14 @@ body {
     background: #f1f1f1;
   }
 }
-.contaner {
+.container {
   min-height: fit-content;
 }
 /*  */
 #products {
   justify-content: center;
   gap: 35px;
+  margin-top: 20px;
 
   /* align-items: center; */
 }
@@ -291,7 +658,13 @@ body {
   }
   .card-img-top {
     padding: 5px 0 0 0;
-    width: 268px;
+    width: 288px;
+  }
+  #search{
+    margin-right: 350px;
+  }
+  #filter{
+    margin-right: 200px;
   }
 }
 

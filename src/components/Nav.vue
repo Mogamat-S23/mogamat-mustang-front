@@ -60,6 +60,9 @@
               <router-link to="/register" class="link">Register  </router-link>
             </li>
             <li id="list">
+              <router-link to="/contact" class="link">Contact Us  </router-link>
+            </li>
+            <li id="list">
               <router-link to="/myprofile" class="link">my profile  </router-link>
             </li>
             
@@ -272,6 +275,7 @@ span{
 #navigation{
   display: flex;
   justify-content: space-between;
+  background-color: black;
 }
 
 ul{

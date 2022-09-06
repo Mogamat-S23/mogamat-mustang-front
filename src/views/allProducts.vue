@@ -1,4 +1,7 @@
 <template>
+  <div class="body">
+
+ 
   <div class="container">
 
     <!-- <header>
@@ -22,6 +25,7 @@
     </div>
   </div>
 </div>
+</div>
 </template>
 
 <script>
@@ -41,6 +45,15 @@ header {
   background-color: black;
   height: 13vh;
   margin-bottom: 50px;
+}
+
+.body{
+  background-image: url('https://i.postimg.cc/7ZRxYbjG/725184.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  /* width: 100vw; */
 }
 * {
   border: 0;

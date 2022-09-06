@@ -46,10 +46,10 @@
                 <h2>Contact</h2>
                 <ul>
                     <li>
-                        Call: <span> +27(0)83 765 0954</span>
+                        Call: <span> +27(0)83 598 9156</span>
                     </li>
                     <li>
-                        Email: <span>saleemariefdien@gmail.com</span> 
+                        Email: <span>mogamatsmustangs@gmail.com</span> 
                     </li>
                     <li>
                         Address:
