@@ -148,7 +148,7 @@ export default {
 
 header {
   background-color: black;
-  height: 13vh;
+  height: 10vh;
   margin-bottom: 50px;
 }
 #btn{

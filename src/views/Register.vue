@@ -97,7 +97,7 @@ data(){
         background-color: black;
         height: 10vh;
         margin-bottom: 20px;
-        widows: 100%;
+        /* widows: 100%; */
     }
 
 body{

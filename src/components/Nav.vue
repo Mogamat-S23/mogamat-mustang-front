@@ -35,7 +35,7 @@
     <h1 class="offcanvas-title" id="staticBackdropLabel">  <img class="img" src="https://i.postimg.cc/pXCh59Ts/Untitlr4teyued-1.png" alt="" width="70px" height="70px"><span>Mogamats </span><span id="mustangs"> Mustangs</span></h1>
     <button id="x" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
- <br id="break">
+ <br class="break">
   <div class="offcanvas-body">
     <!-- <div>
      <nav class="navbar navbar-expand-lg navbar-light container">
@@ -125,8 +125,10 @@ export default {
   
 } */
 
+
 h1{
   color: white;
+  
 }
 img{
  margin-left: 95px;
@@ -311,6 +313,19 @@ ul{
 #x{
  background-color: white;
  margin-bottom: 120px;
+}
+
+
+.offcanvas, .offcanvas-lg, .offcanvas-md, .offcanvas-sm, .offcanvas-xl, .offcanvas-xxl {
+    --bs-offcanvas-width: 400px;
+    --bs-offcanvas-height: 30vh;
+    --bs-offcanvas-padding-x: 1rem;
+    --bs-offcanvas-padding-y: 1rem;
+    --bs-offcanvas-color: ;
+    --bs-offcanvas-bg: orangered;
+    --bs-offcanvas-border-width: 1px;
+    --bs-offcanvas-border-color: var(--bs-border-color-translucent);
+    --bs-offcanvas-box-shadow: 0 0.125rem 0.25remrgba(0, 0, 0, 0.075);
 }
 
 </style>
