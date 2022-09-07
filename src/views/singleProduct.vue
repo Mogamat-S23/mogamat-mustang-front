@@ -167,7 +167,7 @@ export default {
   border-bottom: 3px solid rgba(251, 75, 2, 1);
   border-left: 3px solid rgba(255, 151, 0, 1);
   border-right:3px solid rgba(255, 151, 0, 1);
-  margin-top: 20px;
+  margin-top: 100px;
   background-color: black;
   color: white;
 }

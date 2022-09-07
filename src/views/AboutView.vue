@@ -73,6 +73,20 @@
 
 <style scoped>
 
+h1{
+  
+ 
+  color: #db6216;
+  background-image: -webkit-linear-gradient(0deg, #db6216 55%, #cccf1d 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+
+
+
+
+}
 .about{
   background-image: url('https://i.postimg.cc/j2Y9pc7k/orza-Horizon-4.jpg');
   background-repeat: no-repeat;
