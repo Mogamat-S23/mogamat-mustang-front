@@ -372,8 +372,7 @@ body {
   transform: translateY(1px);
 }
 
-/* From uiverse.io by @harman-kanda */
-/* From cssbuttons.io by @harmankanda.github.io/New */
+/* ///loader */
 
 .pl {
  width: 5em;
