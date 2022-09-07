@@ -1,5 +1,5 @@
 <template>    
-<div id="navigation">
+<nav class="fixed-top" id="navigation">
   <button id="navbutton" class="custom-btn btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
   <i class="bi bi-list"></i>
 </button>
@@ -28,7 +28,7 @@
                 Toggle right offcanvas
               </button> -->
             </div>
-</div>
+</nav>
 
 <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
   <div class="offcanvas-header">
@@ -58,6 +58,9 @@
             </li>
             <li id="list">
               <router-link to="/register" class="link">Register  </router-link>
+            </li>
+            <li id="list">
+              <router-link to="/about" class="link">About Us</router-link>
             </li>
             <li id="list">
               <router-link to="/contact" class="link">Contact Us  </router-link>

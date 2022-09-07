@@ -155,6 +155,7 @@
        
         span{
             color:rgba(255, 151, 0, 1);
+            font-size: 18px;
         }
         #contact {
             margin-right: 10%;
