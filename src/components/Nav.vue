@@ -4,7 +4,7 @@
   <i class="bi bi-list"></i>
 </button>
 <button id="cartbutton" class="custom-btn btn " type="button" @click="logout">
-  logout
+ Logout
 </button>
 <div  v-if="user">
               <button
@@ -42,31 +42,31 @@
       <div class="container-fluid"> -->
           <ul>
             <li id="list">
-              <router-link to="/" class="link">Home</router-link>
+              <router-link to="/" class="link"><i class="bi bi-house-door-fill"></i> Home</router-link>
             </li>
             <li id="list">
-              <router-link to="/products" class="link">Shop  </router-link>
+              <router-link to="/products" class="link"><i class="bi bi-speedometer"></i> Garage</router-link>
             </li>
             <li id="list" >
-              <router-link to="/admin" class="link">Admin  </router-link>
+              <router-link to="/admin" class="link"><i class="bi bi-person-video2"></i> Admin  </router-link>
             </li>
             <li id="list">
-              <router-link to="/usertable" class="link">User Table  </router-link>
+              <router-link to="/usertable" class="link"><i class="bi bi-table"></i> User able  </router-link>
             </li>
             <li id="list">
-              <router-link to="/login" class="link">Login  </router-link>
+              <router-link to="/login" class="link"><i class="bi bi-box-arrow-in-right"></i> Login  </router-link>
             </li>
             <li id="list">
-              <router-link to="/register" class="link">Register  </router-link>
+              <router-link to="/register" class="link"><i class="bi bi-file-text-fill"></i> Register  </router-link>
             </li>
             <li id="list">
-              <router-link to="/about" class="link">About Us</router-link>
+              <router-link to="/about" class="link"><i class="bi bi-file-richtext-fill"></i> About Us</router-link>
             </li>
             <li id="list">
-              <router-link to="/contact" class="link">Contact Us  </router-link>
+              <router-link to="/contact" class="link"><i class="bi bi-telephone-fill"></i> Contact Us  </router-link>
             </li>
             <li id="list">
-              <router-link to="/myprofile" class="link">My Account  </router-link>
+              <router-link to="/myprofile" class="link"><i class="bi bi-person-circle"></i> My Account  </router-link>
             </li>
             
            

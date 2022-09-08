@@ -1,7 +1,7 @@
 <template>
-<header>
+<!-- <header>
 
-</header>
+</header> -->
 <div class="background">
 
 
@@ -103,10 +103,10 @@ header{
     min-height: 10vh;
     color: white;
   }
- 
+/*  
    .row{
-    margin-top: 13px;
-  } 
+    margin-top: 150px;
+  }  */
   .background{
     background-image: url('https://i.postimg.cc/j2Y9pc7k/orza-Horizon-4.jpg');
   background-repeat: no-repeat;
@@ -117,11 +117,11 @@ header{
   }
 
   #user{
-    margin-top:50px;
+    margin-top:150px;
   }
 
   #userForm{
-    margin-top: 50px;
+    margin-top: 150px;
   }
 
 

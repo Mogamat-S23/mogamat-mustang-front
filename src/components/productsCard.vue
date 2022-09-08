@@ -7,7 +7,7 @@
     
     <div class="container" id="filter">
       <div class="row">
-        <div class="col-md-6" id="search">
+        <div class="col-md-4" id="search">
           <form action="" class="search-bar">
       <input
       class="form-control"
@@ -22,11 +22,24 @@
       />
       </form>
         </div>
-     <div class="col-md-6" id="filter">
+     <div class="col-md-4" id="filter">
+      <div>
+      <form class="filter">
+      <select class="form-control" name="" id="" v-model="price" @change="SortPrice">
+        
+  <option value="All" selected disabled>Sort by price</option>
+  <option value="All">All</option>
+  <option value="asc">Higher Price</option>
+  <option value="desc">Lower Price</option>
+  </select>
+    </form>
+    </div>
+     </div>
+     <div class="col-md-4" id="filter">
       <div>
       <form class="filter">
       <select class="form-control" name="" id="" v-model="gear">
-  <option value="All" selected disabled>Sort by Transmission Type</option>
+  <option value="All" selected disabled>Filter by Transmission Type</option>
   <option value="All">All</option>
   <option value="Manual">Manual</option>
   <option value="Automatic">Automatic</option>
@@ -109,6 +122,20 @@ export default {
       });
     },
   },
+  methods:{
+    SortPrice() {
+      let up = this.price;
+      if (up === "asc") {
+        this.$store.state.products.sort((a, b) => {
+          return a.price - b.price;
+        });
+      } else {
+        this.$store.state.products.sort((a, b) => {
+          return b.price - a.price;
+        });
+      }
+    },
+  }
 };
 </script>
 
@@ -660,17 +687,17 @@ body {
     width: 300px;
   }
   .card {
-    margin-right: 264px;
+    margin-right: 2px;
   }
   .card-img-top {
     padding: 5px 0 0 0;
     width: 288px;
   }
   #search{
-    margin-right: 350px;
+    margin-right: 8px;
   }
   #filter{
-    margin-right: 200px;
+    margin-right: -63px;
   }
 }
 

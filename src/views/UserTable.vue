@@ -1,4 +1,6 @@
 <template>
+  <div class="back">
+
     <div class="container">
     <h2 style="color: black;">User Table</h2>
     <table class="table">
@@ -8,6 +10,7 @@
           <th>ID</th>
           <th>Firstname</th>
           <th>Surname</th>
+          <!-- <th>profileImage</th> -->
           <th>email</th>
          
           
@@ -25,14 +28,15 @@
             <tr v-for="user in users" :key="user.id">
               <td>{{user.user_id  }}</td>
               <td>{{user.firstName }}</td>
-            <td>{{user.surName}}</td>
+              <td>{{user.surName}}</td>
+              <!-- <td>{{user.userProfile }}</td> -->
             <td>{{user.email}}</td>
            
-            <td><button data-bs-toggle="modal" :data-bs-target="'#updateuser'+user.user_id">
+            <td><button class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#updateuser'+user.user_id">
                 edit
 
             </button>
-            <button @click="this.$store.dispatch('deleteUser', user.user_id)">delete</button>
+            <button class="btn btn-primary" @click="this.$store.dispatch('deleteUser', user.user_id)">delete</button>
             </td>
             
     
@@ -43,6 +47,7 @@
       </tbody>
         <div v-else>No users</div>
     </table>
+  </div>
   </div>
 </template>
 
@@ -76,6 +81,22 @@ components:{editUser},
 
 .table{
   margin-top: 50px;
+  color:white
 }
-    
+
+.back{
+  background-image:url('https://i.postimg.cc/9XqPWC8k/za-Forza-Horizon-4.jpg') ;
+  height: 100vh;
+}
+
+.btn {
+ color: black;
+ background-color:rgba(255, 151, 0, 1) ;
+ border: 2px solid rgba(255, 151, 0, 1);
+ margin: 5px;
+}
+
+.btn:hover{
+  background-color:rgba(251, 75, 2, 1) ;
+}
 </style>
