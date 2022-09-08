@@ -16,7 +16,7 @@
         pattern=".*\S.*"
         v-model="search"
         id="searchicon"
-        placeholder="search..."
+        placeholder="search by name..."
         required
         
       />
@@ -122,11 +122,17 @@ export default {
   border-right:3px solid rgba(255, 151, 0, 1);
 }
 
+
+
 #filter{
-  margin-top: 25px;
+  margin-top: 60px;
+  /* padding: 15px; */
   
 }
 
+form.search-bar{
+  margin-top: 35px;
+}
 .form-control {
     display: block;
     width: 75%;
@@ -146,11 +152,11 @@ export default {
 }
 
 
-header {
+/* header {
   background-color: black;
   height: 10vh;
   margin-bottom: 50px;
-}
+} */
 #btn{
   background: linear-gradient(0deg, rgba(255, 151, 0, 1) 0%, rgba(251, 75, 2, 1) 100%);
   width: 120px;
@@ -175,6 +181,7 @@ header {
  height: 0%;
  width: 2px;
 }
+
 
 .btn:after {
  width: 0%;
@@ -631,9 +638,9 @@ body {
   --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
-  margin-top: calc(-1 * var(--bs-gutter-y));
+  /* margin-top: calc(-1 * var(--bs-gutter-y));
   margin-right: calc(-0.5 * var(--bs-gutter-x));
-  margin-left: calc(5.5 * var(--bs-gutter-x));
+  margin-left: calc(5.5 * var(--bs-gutter-x)); */
 }
 
 .card-img-top {
@@ -664,6 +671,14 @@ body {
   }
   #filter{
     margin-right: 200px;
+  }
+}
+
+@media screen and (min-width:1023px) {
+  .row{
+     margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(5.5 * var(--bs-gutter-x));
   }
 }
 

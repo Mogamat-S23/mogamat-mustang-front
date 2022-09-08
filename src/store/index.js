@@ -140,7 +140,8 @@ export default createStore({
     //login
     login: async (context, data) => {
       console.log(data);
-       fetch("http://localhost:3000/login", {
+       fetch("https://mogamatmustang.herokuapp.com//login", {
+      //  fetch("http://localhost:3000/login", {
         // mode:"no-cors",
         method: "POST",
         body: JSON.stringify(data),
@@ -165,7 +166,8 @@ export default createStore({
   //register 
   register: async (context,data) => {
     console.log("Sup")
-    await fetch("http://localhost:3000/register" , {
+    // await fetch("http://localhost:3000/register" , {
+    await fetch("https://mogamatmustang.herokuapp.com//register" , {
       method:"POST",
       body: JSON.stringify(data),
       headers: {
@@ -179,7 +181,8 @@ export default createStore({
       // context.dispatch("login",data)
   },
   fetchUsers: async (context) => {
-    await fetch('http://localhost:3000/users')
+    // await fetch('http://localhost:3000/users')
+    await fetch('https://mogamatmustang.herokuapp.com//users')
       .then(users => users.json())
       .then(usersJson => context.state.users = usersJson.user)
       
@@ -195,7 +198,8 @@ export default createStore({
   editUser: async (context, user) => {
     console.log(user);
     // fetch("http://localhost:3000/products/" + product.id, {
-    fetch("http://localhost:3000/users/" + user.id, {
+    // fetch("http://localhost:3000/users/" + user.id, {
+    fetch("https://mogamatmustang.herokuapp.com//users/" + user.id, {
         method: "PUT",
         body: JSON.stringify(user),
         headers: {
@@ -214,7 +218,8 @@ export default createStore({
   // Deletes user from db
   deleteUser: async (context, id) => {
     // fetch("http://localhost:3000/products/" + id, {
-    fetch("http://localhost:3000/users/" + id, {
+    // fetch("http://localhost:3000/users/" + id, {
+    fetch("https://mogamatmustang.herokuapp.com//users/" + id, {
         method: "DELETE",
         headers: {
           "Content-type": "application/json; charset=UTF-8",
@@ -234,7 +239,8 @@ export default createStore({
   getMustang: async (context, id) => {
     id = context.state.user.id
     // id = context.state.user.id
-    await fetch("http://localhost:3000/users/" + id + "/cart", {
+    // await fetch("http://localhost:3000/users/" + id + "/cart", {
+    await fetch("https://mogamatmustang.herokuapp.com//users/" + id + "/cart", {
       method: "GET",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -251,7 +257,8 @@ export default createStore({
   addTocart: async (context, mustang, id) => {
     id = context.state.user.id;
     console.log(mustang);
-    await fetch("http://localhost:3000/users/" + id + "/cart", {
+    // await fetch("http://localhost:3000/users/" + id + "/cart", {
+    await fetch("https://mogamatmustang.herokuapp.com//users/" + id + "/cart", {
       method: "POST",
       body: JSON.stringify(mustang),
       headers: {
@@ -267,7 +274,8 @@ export default createStore({
   },
   clearCart: async (context, id) => {
     id = context.state.user.id
-    await fetch("http://localhost:3000/users/" + id + "/cart", {
+    // await fetch("http://localhost:3000/users/" + id + "/cart", {
+    await fetch("https://mogamatmustang.herokuapp.com//users/" + id + "/cart", {
       method: "DELETE",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -282,8 +290,11 @@ export default createStore({
   deleteFromcart: async (context, car, id) => {
     console.log(car);
     id = context.state.user.id;
+    // await fetch(
+    //   "http://localhost:3000/users/" + id + "/cart/" + car.cart_id,
+    //   {
     await fetch(
-      "http://localhost:3000/users/" + id + "/cart/" + car.cart_id,
+      "https://mogamatmustang.herokuapp.com//users/" + id + "/cart/" + car.cart_id,
       {
         method: "DELETE",
         headers: {

@@ -4,7 +4,7 @@
    <div class="row">
     <div class="col-md-6">
         <h1>
-          Mogamats Mustangs
+          Welcome to Mogamats Mustangs
         </h1>
         <p> Mogamats Mustangs are there for all those mustang lovers.
         The Ford Mustang is one of the world's most iconic cars and remains the world's best-selling sports car. The Mustang nameplate has been in service since 1964 and continues to sell well, to this day. Testament to its design and value.</p>
@@ -40,16 +40,10 @@
                     <div>
                       <ul class="list-inline">
                         <li class="list-inline-item">
-                          <i class="fab fa-github text-light"></i>
+                          <a  id="ref" href="https://github.com/Mogamat-S23" target="_blank"> <i class="fab fa-github text-light"></i></a>
                         </li>
                         <li class="list-inline-item">
-                          <i class="fab fa-linkedin-in text-light"></i>
-                        </li>
-                        <li class="list-inline-item">
-                          <i class="fab fa-instagram text-light"></i>
-                        </li>
-                        <li class="list-inline-item">
-                          <i class="fab fa-twitter text-light"></i>
+                          <a id="ref" href="https://www.linkedin.com/in/mogamat-saleem-ariefdien-808966196/" target="_blank"><i class="fab fa-linkedin-in text-light"></i></a>
                         </li>
                       </ul>
                     </div>
@@ -82,11 +76,10 @@ h1{
   -webkit-background-clip: text;
   -text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
-
-
-
-
+  font-size: 3rem;
 }
+
+
 .about{
   background-image: url('https://i.postimg.cc/j2Y9pc7k/orza-Horizon-4.jpg');
   background-repeat: no-repeat;
@@ -94,6 +87,7 @@ h1{
   aspect-ratio: 1.9;
   min-height: auto;
   width: 100%;
+  color: white;
 }
 .container{
   padding-top: 100px;

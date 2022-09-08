@@ -9,7 +9,7 @@
           <th>Firstname</th>
           <th>Surname</th>
           <th>email</th>
-          <th>password</th>
+         
           
           <th>edit/delete</th>
 
@@ -27,7 +27,7 @@
               <td>{{user.firstName }}</td>
             <td>{{user.surName}}</td>
             <td>{{user.email}}</td>
-            <td>{{user.password}}</td>
+           
             <td><button data-bs-toggle="modal" :data-bs-target="'#updateuser'+user.user_id">
                 edit
 
@@ -73,5 +73,9 @@ components:{editUser},
     overflow-x:hidden;
   
   }
+
+.table{
+  margin-top: 50px;
+}
     
 </style>

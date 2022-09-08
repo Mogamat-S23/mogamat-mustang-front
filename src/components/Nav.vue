@@ -48,10 +48,10 @@
               <router-link to="/products" class="link">Shop  </router-link>
             </li>
             <li id="list" >
-              <router-link to="/admin" class="link">admin  </router-link>
+              <router-link to="/admin" class="link">Admin  </router-link>
             </li>
             <li id="list">
-              <router-link to="/usertable" class="link">user table  </router-link>
+              <router-link to="/usertable" class="link">User Table  </router-link>
             </li>
             <li id="list">
               <router-link to="/login" class="link">Login  </router-link>
@@ -66,7 +66,7 @@
               <router-link to="/contact" class="link">Contact Us  </router-link>
             </li>
             <li id="list">
-              <router-link to="/myprofile" class="link">my profile  </router-link>
+              <router-link to="/myprofile" class="link">My Account  </router-link>
             </li>
             
            
@@ -131,6 +131,7 @@ export default {
 
 h1{
   color: white;
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   
 }
 img{

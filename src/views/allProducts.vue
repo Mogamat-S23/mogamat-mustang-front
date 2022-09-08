@@ -1,7 +1,7 @@
 <template>
-  <header>
+  <!-- <header>
 
-  </header>
+  </header> -->
   <div class="body">
 
  
@@ -45,7 +45,7 @@ export default {
 
 <style scoped>
 header {
-  background-color: black;
+ 
   height: 10vh;
   margin-bottom: 50px;
 }
