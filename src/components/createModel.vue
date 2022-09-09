@@ -212,10 +212,10 @@ export default {
   data() {
     return {
       productName:"",  
-      mainImage: "https://i.postimg.cc/LsvJSbxH/the-logo.jpg",
-      image2:"https://i.postimg.cc/LsvJSbxH/the-logo.jpg",
-      image3:"https://i.postimg.cc/LsvJSbxH/the-logo.jpg",
-      image4:"https://i.postimg.cc/LsvJSbxH/the-logo.jpg",
+      mainImage: "https://i.postimg.cc/pXCh59Ts/Untitlr4teyued-1.png",
+      image2:"https://i.postimg.cc/pXCh59Ts/Untitlr4teyued-1.png",
+      image3:"https://i.postimg.cc/pXCh59Ts/Untitlr4teyued-1.png",
+      image4:"https://i.postimg.cc/pXCh59Ts/Untitlr4teyued-1.png",
       carDescription:"",
       price:"",
       model:"",

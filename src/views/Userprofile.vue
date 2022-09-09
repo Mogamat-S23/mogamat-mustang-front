@@ -6,7 +6,7 @@
 
 
   <div class="container">
-    <div>
+    <div v-if="user">
         <div class="row">
             <div class="col-md-6">
                 <img class="mx-auto img-fluid rounded-circle" :src="user.userProfile" alt="" id="user">
@@ -74,8 +74,14 @@
                </div> -->
               <button type="button"
               class="btn btn-light" 
+              id="profileButton"
               @click="this.$store.dispatch('editUser', user)">
               Update Details</button>
+
+              <button type="button"
+              class="btn btn-light" 
+              @click="this.$store.dispatch('deleteUser', user.id)">
+              Delete Account</button>
                 </form>
             </div>
         </div>
@@ -196,5 +202,9 @@ header{
 
 .btn span:hover:after {
  width: 100%;
+}
+
+#profileButton{
+  margin-right: 15px;
 }
 </style>

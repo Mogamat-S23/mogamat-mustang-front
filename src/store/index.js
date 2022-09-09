@@ -1,3 +1,4 @@
+import router from '@/router';
 import {
   createStore
 } from 'vuex'
@@ -159,6 +160,7 @@ export default createStore({
         console.log(user)
         if(user.userRole === 'admin'){
           context.state.admin = true
+          router.push('/products')
         }
       });
     },
@@ -179,6 +181,7 @@ export default createStore({
       context.state.msg = userData.msg
       console.log(userData)})
       // context.dispatch("login",data)
+      router.push('/login')
   },
   fetchUsers: async (context) => {
     // await fetch('http://localhost:3000/users')
@@ -217,8 +220,8 @@ export default createStore({
 
   // Deletes user from db
   deleteUser: async (context, id) => {
+    console.log(id);
     // fetch("http://localhost:3000/products/" + id, {
-    // fetch("http://localhost:3000/users/" + id, {
     fetch("https://mogamatmustang.herokuapp.com/users/" + id, {
         method: "DELETE",
         headers: {
@@ -229,11 +232,12 @@ export default createStore({
       .then((data) => {
         console.log(data.msg)
         context.dispatch("fetchUsers")
-
+        context.state.user = null
+        localStorage.clear()
+        router.push("/")
       });
 
   },
-
   //cart
     
   getMustang: async (context, id) => {

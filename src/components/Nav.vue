@@ -3,7 +3,9 @@
   <button id="navbutton" class="custom-btn btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
   <i class="bi bi-list"></i>
 </button>
-<button id="cartbutton" class="custom-btn btn " type="button" @click="logout">
+<button 
+v-if="this.$store.state.user != null"
+id="cartbutton" class="custom-btn btn " type="button" @click="logout">
  Logout
 </button>
 <div  v-if="user">
@@ -35,7 +37,6 @@
     <h1 class="offcanvas-title" id="staticBackdropLabel">  <img class="img" src="https://i.postimg.cc/pXCh59Ts/Untitlr4teyued-1.png" alt="" width="70px" height="70px"><span>Mogamats </span><span id="mustangs"> Mustangs</span></h1>
     <button id="x" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
- <br class="break">
   <div class="offcanvas-body">
     <!-- <div>
      <nav class="navbar navbar-expand-lg navbar-light container">
@@ -44,32 +45,39 @@
             <li id="list">
               <router-link to="/" class="link"><i class="bi bi-house-door-fill"></i> Home</router-link>
             </li>
-            <li id="list">
+            <li id="list" v-if="this.$store.state.user != null">
               <router-link to="/products" class="link"><i class="bi bi-speedometer"></i> Garage</router-link>
-            </li>
-            <li id="list" >
-              <router-link to="/admin" class="link"><i class="bi bi-person-video2"></i> Admin  </router-link>
-            </li>
-            <li id="list">
-              <router-link to="/usertable" class="link"><i class="bi bi-table"></i> User able  </router-link>
-            </li>
-            <li id="list">
-              <router-link to="/login" class="link"><i class="bi bi-box-arrow-in-right"></i> Login  </router-link>
-            </li>
-            <li id="list">
-              <router-link to="/register" class="link"><i class="bi bi-file-text-fill"></i> Register  </router-link>
-            </li>
-            <li id="list">
-              <router-link to="/about" class="link"><i class="bi bi-file-richtext-fill"></i> About Us</router-link>
-            </li>
-            <li id="list">
-              <router-link to="/contact" class="link"><i class="bi bi-telephone-fill"></i> Contact Us  </router-link>
-            </li>
-            <li id="list">
-              <router-link to="/myprofile" class="link"><i class="bi bi-person-circle"></i> My Account  </router-link>
             </li>
             
            
+            <li id="list" v-if="this.$store.state.user == null">
+              <router-link to="/login" class="link"><i class="bi bi-box-arrow-in-right"></i> Login  </router-link>
+            </li>
+            <li id="list" v-if="this.$store.state.user == null">
+              <router-link to="/register" class="link"><i class="bi bi-file-text-fill"></i> Register  </router-link>
+            </li>
+            <li id="list" v-if="this.$store.state.user != null">
+              <router-link to="/about" class="link"><i class="bi bi-file-richtext-fill"></i> About Us</router-link>
+            </li>
+            <li id="list" v-if="this.$store.state.user != null">
+              <router-link to="/contact" class="link"><i class="bi bi-telephone-fill"></i> Contact Us  </router-link>
+            </li>
+            <li id="list" v-if="this.$store.state.user != null">
+              <router-link to="/myprofile" class="link"><i class="bi bi-person-circle"></i> My Account  </router-link>
+            </li>
+            <li id="list" v-if="this.$store.state.user != null">
+              <router-link to="/admin" class="link" v-if="this.$store.state.user.userRole == 'admin'"><i class="bi bi-person-video2"></i> Admin  </router-link>
+            </li>
+            <li id="list" v-if="this.$store.state.user != null">
+              <router-link to="/usertable" class="link" v-if="this.$store.state.user.userRole == 'admin'"><i class="bi bi-table"></i> User Table  </router-link>
+            </li>
+            <br class="break">
+            <img v-if="this.$store.state.user != null" id="userimg"
+            :src="this.$store.state.user.userProfile" alt="">
+            <h5 v-if="this.$store.state.user != null" id="user">
+              User:{{this.$store.state.user.firstName}}
+            </h5>
+            
           </ul>
         <!-- </div>
     </nav>
@@ -330,6 +338,23 @@ ul{
     --bs-offcanvas-border-width: 1px;
     --bs-offcanvas-border-color: var(--bs-border-color-translucent);
     --bs-offcanvas-box-shadow: 0 0.125rem 0.25remrgba(0, 0, 0, 0.075);
+}
+
+#userimg{
+  width: 70px;
+  border-radius: 50%;
+  height: 70px;
+  margin-top: 20px;
+}
+
+#user{
+  color: #db6216;
+  background-image: -webkit-linear-gradient(0deg, #db6216 55%, #cccf1d 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
 }
 
 </style>
